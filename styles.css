@@ -1,0 +1,158 @@
+@import url(variables.css);
+@import url(navigation.css);
+@import url(homepage.css);
+@import url(just-arrived.css);
+@import url(learn-space.css);
+@import url(help-support.css);
+
+/* GLOBAL STYLES */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*::after {
+  box-sizing: inherit;
+}
+html,
+body {
+  block-size: 100%;
+}
+
+body {
+  background: var(--yellow-200);
+  color: var(--yellow-800);
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  margin: 0;
+}
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  padding: 1rem;
+  max-inline-size: 60rem;
+}
+/* THE BOX */
+.l-box {
+  padding: 25px;
+  border: 2px solid;
+  color: var(--yellow-800);
+  background-color: var(--yellow-400);
+  border-radius: 15px;
+  margin: 13px;
+}
+.l-box * {
+  color: inherit;
+}
+.l-box--invert {
+  color: var(--yellow-300);
+  background-color: var(--yellow-900);
+}
+
+/* THE CENTRE */
+.l-center {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: clamp(200px, 80%, 1024px);
+}
+/* FOOTER */
+footer {
+  background: var(--yellow-700);
+  color: var(--yellow-300);
+  text-align: center;
+  padding: 0.7rem;
+}
+footer a {
+  color: var(--accent-700);
+}
+/*button*/
+.btn {
+  background: var(--accent-700);
+  color: var(--yellow-100);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  display: inline-block;
+  padding: 0.5rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+.btn:hover {
+  background: var(--primary-700);
+  color: var(--yellow-100);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px oklch(from var(--yellow-800) l c h / 0.3);
+}
+.fa-hand-pointer-o{
+  display:inline-block;
+  animation: handClick 1.5s ease-in-out infinite;
+}
+
+@keyframes handClick{
+
+  0%{
+    transform:scale(1);
+  }
+
+  40%{
+    transform:scale(1.2);
+  }
+
+  60%{
+    transform:scale(1);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+
+/* GOOGLE TRANSLATE */
+#google_translate_element {
+  display: block;
+  margin-top: 12px;
+}
+
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+.goog-te-gadget select {
+  
+  padding: 7px 0.5rem;
+  border: 1px solid var(--yellow-400);
+  border-radius: 8px;
+  color: var(--yellow-900) !important;
+  background: var(--yellow-100);
+}

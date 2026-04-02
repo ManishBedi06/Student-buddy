@@ -1,0 +1,237 @@
+/* NAVIGATION */
+.logo{
+  color: var(--yellow-100);
+  text-shadow: 0 0 8px var(--yellow-800);
+  font-weight: 900;
+  font-size: 1.75rem;
+  letter-spacing: 0.05em;
+  max-inline-size: 5.625rem;
+  display:inline-block;
+
+  /* page load animation */
+  animation: logoIntro 1.5s ease forwards;
+}
+
+/* LOGO INTRO ANIMATION */
+@keyframes logoIntro{
+
+  0%{
+    opacity:0;
+    transform: translateY(-30px) scale(0.8);
+    text-shadow:0 0 0 var(--yellow-800);
+  }
+
+  50%{
+    opacity:1;
+    transform: translateY(5px) scale(1.1);
+    text-shadow:0 0 20px var(--yellow-700);
+  }
+
+  100%{
+    transform: translateY(0) scale(1);
+    text-shadow:0 0 8px var(--yellow-800);
+  }
+
+}
+
+.navWrap {
+  position: sticky;
+  top: 0;                    
+  z-index: 99;
+  height: 3rem;             
+  width: 100%;              
+  background-color: var(--yellow-700);
+  border-bottom: 1px solid var(--yellow-300);
+  box-shadow: 0 1px 0.5rem oklch(from var(--yellow-800) l c h / 0.5);
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hamburger menu*/
+
+#navToggle {
+  display: none;
+}
+
+#navToggle + label {
+  position: relative;
+  padding: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+#navToggle + label > span,
+#navToggle + label > span::before,
+#navToggle + label > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.75rem;
+  height: 0.125rem;
+  width: 1.75rem;
+  background: var(--yellow-100);
+  transition: 0.14s ease-in-out;
+}
+
+#navToggle + label > span::before {
+  top: -0.5rem;
+}
+#navToggle + label > span::after {
+  top: 0.5rem;
+}
+#navToggle:checked + label > span {
+  width: 0;
+  background: transparent;
+}
+#navToggle:checked + label > span::before {
+  transform: rotateZ(45deg);
+  top: 0;
+}
+#navToggle:checked + label > span::after {
+  transform: rotateZ(-45deg);
+  top: 0;
+}
+#navToggle:checked ~ nav {
+  left: 0;
+}
+
+/* Mobile menu  */
+
+nav {
+  position: absolute;
+  z-index: -1;
+  top: 3rem;
+  left: -110%;
+  width: 100%;
+  transition: 0.22s ease-in-out;
+}
+
+nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--yellow-700);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: var(--yellow-900);
+  border-bottom: 1px solid var(--yellow-300);
+  transition: 0.14s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: var(--accent-500);
+  background: var(--yellow-200);
+}
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: var(--yellow-300);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-500);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--yellow-800);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  background-color: var(--yellow-300);
+  color: var(--yellow-900);
+  font-weight: bold;
+  padding: 13px;
+  border: 1px solid var(--accent-700);
+}
+@media screen and (min-width: 41rem){
+  .navWrap {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 6.25rem minmax(auto, 69rem);
+  block-size: auto;
+  background-color: var(--yellow-700);
+  border-bottom: 1px solid var(--yellow-300);
+  box-shadow: 0 1px 0.5rem oklch(from var(--yellow-900) l c h / 0.5);
+  padding: 0.25rem 1rem;
+}
+
+.navToggleLabel {
+  display: none;
+}
+
+nav {
+  position: initial;
+}
+
+nav::after {
+  display: none;
+}
+
+nav ul li:last-of-type::before {
+  display: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav ul li a {
+  border-bottom: none;
+  color: var(--yellow-100);
+  padding: 0.5rem 0.75rem;
+}
+
+nav ul li a:hover {
+  background: transparent;
+  color: var(--accent-700);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-300);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-300);
+}
+}
+

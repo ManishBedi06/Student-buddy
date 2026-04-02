@@ -1,0 +1,92 @@
+/* SERVICE SECTION */
+.service article{
+  margin-bottom:2rem;
+  animation:articleFade 1s ease;
+}
+@keyframes articleFade{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ARTICLE TITLES */
+.service h2{
+  color:var(--primary-900);
+  font-size:1.8rem;
+  font-weight:bold;
+  margin:1rem;
+  line-height:1.5;
+  animation:titleSlide 1s ease;
+}
+@keyframes titleSlide{
+  from{
+    opacity:0;
+    transform:translateX(-40px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+/* TEXT */
+.service p{
+  margin:0.4rem 0;
+  color:var(--yellow-800);
+}
+/* LIST */
+.service ul{
+  margin:0.5rem 0 0.5rem 1.2rem;
+  padding-left:0;
+  list-style:disc;
+  color:var(--yellow-800);
+}
+/* GRID LAYOUT */
+.l-grid{
+  display:grid;
+  gap:1rem;
+}
+@supports (width: min(250px,100%)){
+  .l-grid{
+    grid-template-columns:
+    repeat(auto-fit,
+    minmax(min(250px,100%),1fr));
+  }
+}
+
+/* ADDRESS LINKS */
+.address{
+  font-style:italic;
+  font-weight:bold;
+  color:var(--primary-700);
+  text-decoration:dotted;
+}
+/* IMAGES */
+.service img{
+  margin-top: 1.5rem;
+  width:100%;
+  height:auto;
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.fa-clock-o{
+  display:inline-block;
+  animation: clockTick 4s linear infinite;
+}
+@keyframes clockTick{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+@media (max-width:768px){
+  .service h2{
+    font-size:1.4rem;
+  }
+
+}

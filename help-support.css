@@ -1,0 +1,150 @@
+/* MAIN WRAPPER */
+.wrapper{
+  margin: 0 auto;
+  padding: 1rem;
+  max-inline-size: 60rem;
+}
+
+/* ===== TITLE SECTION ===== */
+.help:first-child{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  margin-bottom:40px;
+}
+
+/* H1 */
+.wrapper h1{
+  font-size:3rem;
+  margin-bottom:12px;
+  display:block;
+}
+
+/* PARAGRAPH BELOW H1 */
+.help:first-child p{
+  max-width:60ch;
+}
+
+/* ===== GRID LAYOUT FOR ARTICLES ===== */
+.help{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  animation:sectionFade 1.2s ease;
+}
+
+/* ===== BOX ===== */
+.box{
+  padding:25px;
+  border:2px solid;
+  color:var(--yellow-800);
+  background-color:var(--yellow-400);
+  border-radius:15px;
+  margin:5px;
+
+  position:relative;
+  overflow:hidden;
+
+  transition:transform 0.35s ease, box-shadow 0.35s ease;
+
+  animation:boxAppear 0.8s ease;
+}
+
+/* KEEP TEXT COLOR */
+.box *{
+  color:inherit;
+}
+
+/* INVERT BOX */
+.box--invert{
+  color:var(--yellow-300);
+  background-color:var(--yellow-900);
+}
+
+/* SHINE EFFECT */
+.box::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition:0.6s;
+}
+
+.box:hover::before{
+  left:100%;
+}
+
+/* HEADINGS */
+.box h2{
+  margin-bottom:10px;
+}
+
+.box h3{
+  margin-top:10px;
+}
+
+/* LIST STYLE */
+.box ul{
+  padding-left:20px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes sectionFade{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes boxAppear{
+  from{
+    opacity:0;
+    transform:scale(0.9);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+/* ICON ANIMATION */
+.fa-exclamation-triangle{
+  display:inline-block;
+  animation:alertPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes alertPulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+
+  .help{
+    grid-template-columns:1fr;
+  }
+
+  .wrapper h1{
+    font-size:1.8rem;
+  }
+
+  .box{
+    padding:20px;
+  }
+
+}

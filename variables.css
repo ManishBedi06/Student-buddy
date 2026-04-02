@@ -1,0 +1,26 @@
+:root {
+  /* Neutral Colors */
+  --yellow-100: #fbfbf3;
+  --yellow-200: #f4f4ec;
+  --yellow-300: #ecefe1;
+  --yellow-400: #d4dcce;
+  --yellow-500: #b0b7a5;
+  --yellow-600: #89927b;
+  --yellow-700: #636c5a;
+  --yellow-800: #3d4339;
+  --yellow-900: #212322;
+
+  /* Primary Colors */
+  --primary-300: #b5b668; /* Lighter tone */
+  --primary-500: #737438; /* Default, most saturated */
+  --primary-700: #454522; /* Darker tone */
+
+  /* Accent Color */
+  --accent-300: #ffd447;
+  --accent-500: #f5bf18;
+  --accent-700: #b78e2e;
+
+  /*font*/
+  --font-body: "Lora", serif;
+  --font-heading: "Nunito", sans-serif;
+}
